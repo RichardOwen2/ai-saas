@@ -43,3 +43,26 @@ export const validatePostImageConversationPayload = (payload: any) => {
   }
 }
 
+export const validatePostMusicConversationPayload = (payload: any) => {
+  const schema = Joi.object({
+    prompt: Joi.string().min(1).required(),
+  });
+
+  const validationResult = schema.validate(payload);
+
+  if (validationResult.error) {
+    throw new InvariantError(validationResult.error.message);
+  }
+}
+
+export const validatePostVideoConversationPayload = (payload: any) => {
+  const schema = Joi.object({
+    prompt: Joi.string().min(1).required(),
+  });
+
+  const validationResult = schema.validate(payload);
+
+  if (validationResult.error) {
+    throw new InvariantError(validationResult.error.message);
+  }
+}

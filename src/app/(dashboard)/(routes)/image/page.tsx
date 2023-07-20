@@ -9,7 +9,6 @@ import { Download, ImageIcon } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { amountOptions, formSchema, resolutionOptions } from "./constants";
-import { cn } from "@/lib/utils";
 
 import Heading from "@/components/Heading";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
