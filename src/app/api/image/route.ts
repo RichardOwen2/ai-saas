@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 
 import getAuth from "@/lib/getAuth";
 import errorHandler from "@/lib/errorHandler";
-import { validatePostConversationPayload } from "@/validator/conversationValidator";
-import { createConversation } from "@/service/chatService";
+import { validatePostImageConversationPayload } from "@/validator/conversationValidator";
+import { createImageConversation } from "@/service/chatService";
 
 
 export async function POST(req: Request) {
@@ -11,9 +11,9 @@ export async function POST(req: Request) {
     getAuth();
 
     const body = await req.json();
-    validatePostConversationPayload(body);
+    validatePostImageConversationPayload(body);
 
-    const data = await createConversation(body);
+    const data = await createImageConversation(body);
 
     return NextResponse.json({
       message: "success",
